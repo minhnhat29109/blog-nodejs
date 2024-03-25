@@ -7,6 +7,11 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.urlencoded({
+  extended: true
+}));
+app.use(express.json());
+
 app.use(morgan('combined'));
 
 app.engine("hbs", engine({
@@ -19,8 +24,17 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/news', (req, res) => {
+  res.render('news')
+});
+
+app.get('/search', (req, res) => {
+  res.render('search')
+});
+
+app.post('/search', (req, res) => {
+  console.log(req.body)
+  res.render('search')
 });
 
 app.listen(port, () => {

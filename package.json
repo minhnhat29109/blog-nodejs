@@ -21,13 +21,19 @@
     "url": "https://github.com/minhnhat29109/blog-nodejs/issues"
   },
   "homepage": "https://github.com/minhnhat29109/blog-nodejs#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --write --single-quote --trailing-comma all --tab-width 4"
+  },
   "dependencies": {
     "express": "^4.18.3",
     "express-handlebars": "^7.1.2"
   },
   "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
     "sass": "^1.72.0"
   }
 }

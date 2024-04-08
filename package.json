@@ -21,6 +21,11 @@
     "url": "https://github.com/minhnhat29109/blog-nodejs/issues"
   },
   "homepage": "https://github.com/minhnhat29109/blog-nodejs#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --write --single-quote --trailing-comma all --tab-width 4"
   },
